@@ -85,6 +85,8 @@ impl<T: MemAccess> JellyI2c<T> {
             self.wait();
 
             if (self.reg_acc.read_reg_u8(REG_I2C_STATUS) & 0xf) != 0 {
+                self.reg_acc.write_reg_u8(REG_I2C_CONTROL, I2C_CONTROL_STOP);
+                self.wait();
                 return 0;
             }
 
@@ -151,6 +153,8 @@ impl<T: MemAccess> I2cAccess for JellyI2c<T> {
             let last = buf.len() - 1;
             for c in buf.iter_mut() {
                 if (self.reg_acc.read_reg_u8(REG_I2C_STATUS) & 0xf) != 0 {
+                    self.reg_acc.write_reg_u8(REG_I2C_CONTROL, I2C_CONTROL_STOP);
+                    self.wait();
                     break;
                 }
 
