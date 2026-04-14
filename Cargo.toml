@@ -10,7 +10,11 @@ default = ["std"]
 std=[]
 
 [dependencies]
-delegate = "0.13.1"
-jelly-mem_access = { version="0.2.5", default-features=false }
+delegate = "0.13.5"
+jelly-mem_access = { version="0.2.6", default-features=false }
 #jelly-mem_access = { git="https://github.com/ryuz/jelly-mem_access.git", branch="develop", default-features=false }
 #jelly-mem_access = { path = "../mem_access", default-features=false }
+
+#jelly-lib = { git="https://github.com/ryuz/jelly-lib-rs.git", branch="develop", default-features=false }
+jelly-lib = { git="https://github.com/ryuz/jelly-lib-rs.git", rev="95c01a7", default-features=false }
+
