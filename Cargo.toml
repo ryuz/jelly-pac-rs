@@ -1,16 +1,20 @@
 [package]
 name = "jelly-pac"
-version = "0.1.1"
+version = "0.1.2"
+authors = ["Ryuz <ryuz@rtc-lab.com>"]
 edition = "2021"
+repository = "https://github.com/ryuz/jelly-pac-rs.git"
+keywords = ["jelly", "pac", "fpga"]
+license = "MIT"
+readme = "README.md"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Peripheral Access Crate for the Jelly FPGA real-time computing development platform."
 
 [features]
 default = ["std"]
 std=[]
 
 [dependencies]
-delegate = "0.13.1"
-jelly-mem_access = { version="0.2.2", default-features=false }
-#jelly-mem_access = { git="https://github.com/ryuz/jelly-mem_access.git", branch="develop", default-features=false }
-#jelly-mem_access = { path = "../mem_access", default-features=false }
+delegate = "0.13.5"
+jelly-mem_access = { version="0.2.7", default-features=false }
+jelly-lib = { version="0.2.2", default-features=false }
